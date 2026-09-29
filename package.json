@@ -1,0 +1,20 @@
+{
+  "name": "supervisor-issabel",
+  "version": "1.0.0",
+  "description": "Relatórios de chamadas para supervisores de central de atendimento (Issabel/Asterisk) — identidade visual Intek Telecomunicações",
+  "main": "server/index.js",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "MOCK_CDR=1 node server/index.js",
+    "test": "node --test test/*.test.js",
+    "check-cdr": "node server/check-cdr.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.24.4"
+  }
+}

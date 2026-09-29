@@ -1,0 +1,17 @@
+# /etc/systemd/system/supervisor-intek.service
+[Unit]
+Description=Supervisor Intek - relatórios de chamadas (Issabel)
+After=network.target mariadb.service
+
+[Service]
+Type=simple
+User=supervisor-intek
+Group=supervisor-intek
+WorkingDirectory=/opt/supervisor
+ExecStart=/usr/bin/node server/index.js
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
